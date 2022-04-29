@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
 import { ManageHistoryComponent } from './manage-history/manage-history.component';
 import { ManageBookingsComponent } from './manage-bookings/manage-bookings.component';
 import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

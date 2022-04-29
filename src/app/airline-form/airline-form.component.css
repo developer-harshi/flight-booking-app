@@ -1,0 +1,16 @@
+ label {
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: flex-end; */
+  text-align: center;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+
+.air-form
+{
+  padding-top: 250px;
+  padding-left: 250px;
+}
