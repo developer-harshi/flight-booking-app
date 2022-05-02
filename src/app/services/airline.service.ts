@@ -15,7 +15,7 @@ const baseUrl = 'http://localhost:9000/api/v1.0/flight';
 export class AirlineService {
 
   constructor(private http: HttpClient) { }
-  register(data:Register):Observable<Register>
+  register(data:Register):Observable<any>
   {
     return this.http.post(baseUrl,data)
   }

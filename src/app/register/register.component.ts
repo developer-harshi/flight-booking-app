@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, ValidationErrors } from '@angular/forms';
-
+import { AirlineService } from '../services/airline.service';
+import { Register } from '../models/register.model';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class RegisterComponent implements OnInit {
     },this.passwordMatchingValidator
 
   );
-  constructor() { }
+  constructor(private _airlineService:AirlineService) { }
 
   ngOnInit(): void {
 
