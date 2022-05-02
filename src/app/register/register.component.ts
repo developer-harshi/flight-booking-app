@@ -10,29 +10,39 @@ import { Register } from '../models/register.model';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
-  registrationForm=new FormGroup(
-    {
-      userName:new FormControl(null,Validators.required),
-      email:new FormControl(null,[Validators.required,Validators.email]),
-      password:new FormControl(null,Validators.required),
-      confirmPassword:new FormControl(null,Validators.required),
-      contactNumber:new FormControl(null,[Validators.required]),
-      contactAddress:new FormControl(null,[Validators.required])
-
-    },this.passwordMatchingValidator
-
-  );
-  constructor(private _airlineService:AirlineService) { }
+  registrationForm:any;
+  constructor(private _airlineService:AirlineService,private formbulider: FormBuilder,) { }
 
   ngOnInit(): void {
+    this.registrationForm = this.formbulider.group({
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
+      Mobile: ['', [Validators.required]],
+      // Address: ['', [Validators.required]],
+      // Country: ['', [Validators.required]],
+      // State: ['', [Validators.required]],
+      // City: ['', [Validators.required]],
+      // Pincode: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{6}')])]
+    });/*,this.passwordMatchingValidator);*/
 
 
   }
   onSubmit(  )
   {
-    console.log(this.registrationForm)
+    console.log(this.registrationForm);
+    // let register=new Register();
+    const register=this.registrationForm.value;
+    console.log(register);
+    this._airlineService.register(register).subscribe((res) => {
+      console.log('Issue added!');
+      // this.ngZone.run(() => this.router.navigateByUrl('/issues-list'));
+    });
+
   }
   // import { AbstractControl, ValidatorFn } from '@angular/forms';
   // export default class Validation {

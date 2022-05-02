@@ -7,9 +7,9 @@
     <div class="card-body">
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <div class="form-group col-12">
-            <label for="userName" class="form-label">Name</label>
-            <input type="text" class="form-control" formControlName="userName">
-            <span *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <span *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
               Please Provide Name
             </span>
         </div>
@@ -39,19 +39,19 @@
         </div>
 
         <div class="form-group col-12">
-          <label for="contactNumber" class="form-label">ContactNumber</label>
-          <input type="text" class="form-control" formControlName="contactNumber">
-          <span *ngIf="f['contactNumber'].touched && f['contactNumber'].invalid" class="alert alert-danger">
+          <label for="Mobile" class="form-label">Mobile</label>
+          <input type="text" class="form-control" formControlName="Mobile">
+          <span *ngIf="f['Mobile'].touched && f['Mobile'].invalid" class="alert alert-danger">
             Please Provide Name
           </span>
         </div>
-        <div class="form-group col-12">
+        <!-- <div class="form-group col-12">
           <label for="contactAddress" class="form-label">ContactAddress</label>
           <input type="text" class="form-control" formControlName="contactAddress">
           <span *ngIf="f['contactAddress'].touched && f['contactAddress'].invalid" class="alert alert-danger">
             Please Provide Name
           </span>
-        </div>
+        </div> -->
 
         <div class="form-group col-12">
           <button type="submit" class="btn btn-primary">Save</button>
