@@ -14,12 +14,14 @@ import { MessagesComponent } from './messages/messages.component';
 
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    MessagesComponent
+    MessagesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

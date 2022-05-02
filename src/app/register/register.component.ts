@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, ValidationErrors } from '@angular/forms';
 import { AirlineService } from '../services/airline.service';
 import { Register } from '../models/register.model';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Register } from '../models/register.model';
 export class RegisterComponent implements OnInit {
 
   registrationForm:any;
-  constructor(private _airlineService:AirlineService,private formbulider: FormBuilder,) { }
+  constructor(private _authService:AuthService,private formbulider: FormBuilder,) { }
 
   ngOnInit(): void {
     this.registrationForm = this.formbulider.group({
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
     // let register=new Register();
     const register=this.registrationForm.value;
     console.log(register);
-    this._airlineService.register(register).subscribe((res) => {
+    this._authService.register(register).subscribe((res) => {
       console.log('Issue added!');
       // this.ngZone.run(() => this.router.navigateByUrl('/issues-list'));
     });
