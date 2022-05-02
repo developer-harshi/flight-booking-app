@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from '../models/login.model';
 import { Register } from '../models/register.model';
+
 import { environment } from '../../environments/environment';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 import { HttpHeaders } from '@angular/common/http';
@@ -36,6 +37,8 @@ export class AuthService {
       catchError(this.handleError('register', data))
     );
   }
+
+
 
 
 }

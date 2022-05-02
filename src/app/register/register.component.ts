@@ -14,6 +14,8 @@ import { AuthService } from '../services/auth.service';
 
 export class RegisterComponent implements OnInit {
 
+  userSubmitted!: boolean;
+  user!: Register;
   registrationForm:any;
   constructor(private _authService:AuthService,private formbulider: FormBuilder,) { }
 
@@ -29,15 +31,16 @@ export class RegisterComponent implements OnInit {
       // State: ['', [Validators.required]],
       // City: ['', [Validators.required]],
       // Pincode: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{6}')])]
-    });/*,this.passwordMatchingValidator);*/
+    }, {validators: this.passwordMatchingValidatior});/*,this.passwordMatchingValidator);*/
 
 
   }
   onSubmit(  )
   {
+    this.userSubmitted = true;
     console.log(this.registrationForm);
     // let register=new Register();
-    const register=this.registrationForm.value;
+    const register=this.userData();
     console.log(register);
     this._authService.register(register).subscribe((res) => {
       console.log('Issue added!');
@@ -49,12 +52,50 @@ export class RegisterComponent implements OnInit {
   // export default class Validation {
   //   static match
 
-  passwordMatchingValidator(fc: AbstractControl): ValidationErrors | null {
-    return fc.get('password')?.value === fc.get('confirmPassword')?.value ? null :
-      { notmatched: true }
+  // passwordMatchingValidator(fc: AbstractControl): ValidationErrors | null {
+  //   return fc.get('password')?.value === fc.get('confirmPassword')?.value ? null :
+  //     { notmatched: true }
+  // };
+  passwordMatchingValidatior(fg: FormGroup): Validators {
+    return fg.get('password')?.value === fg.get('confirmPassword')?.value ? "" :
+        {notmatched: true};
+}
+
+  onReset() {
+    this.userSubmitted = false;
+    this.registrationForm.reset();
+}
+
+
+userData(): Register {
+  return this.user = {
+      userName: this.name.value,
+      email: this.email.value,
+      password: this.password.value,
+      Mobile: this.Mobile.value
   };
+}
+
+
   get f(){
     return this.registrationForm.controls;
   }
+
+  get name() {
+    return this.registrationForm.get('name') as FormControl;
+}
+
+get email() {
+    return this.registrationForm.get('email') as FormControl;
+}
+get password() {
+    return this.registrationForm.get('password') as FormControl;
+}
+get confirmPassword() {
+    return this.registrationForm.get('confirmPassword') as FormControl;
+}
+get Mobile() {
+    return this.registrationForm.get('mobile') as FormControl;
+}
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, ValidationErrors } from '@angular/forms';
 import { AirlineService } from '../services/airline.service';
-
+import { AuthService } from '../services/auth.service';
+import {UserForLogin } from '../models/login.model';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AirlineService } from '../services/airline.service';
 export class LoginComponent implements OnInit {
 
   loginForm:any;
-  constructor(private _airlineService:AirlineService,private formbulider: FormBuilder,) { }
+  constructor(private _authService:AuthService,private formbulider: FormBuilder) { }
 
 
 
@@ -30,7 +31,20 @@ export class LoginComponent implements OnInit {
   }
   onSubmit()
   {
-    console.log(this.loginForm)
+    console.log(this.loginForm.value);
+        // const token = this.authService.authUser(loginForm.value);
+        this._authService.authUser(this.loginForm.value).subscribe(
+            (response: UserForLogin) => {
+                console.log(response);
+                const user = response;
+                if (user) {
+                    localStorage.setItem('token', user.token);
+                    localStorage.setItem('userName', user.userName);
+                    // this.alertify.success('Login Successful');
+                    // this.router.navigate(['/']);
+                }
+            }
+        );
   }
   get f(){
     return this.loginForm.controls;
