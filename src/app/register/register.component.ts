@@ -4,7 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, Valida
 import { AirlineService } from '../services/airline.service';
 import { Register } from '../models/register.model';
 import { AuthService } from '../services/auth.service';
-
+// import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-register',
@@ -15,14 +15,19 @@ import { AuthService } from '../services/auth.service';
 export class RegisterComponent implements OnInit {
 
   userSubmitted!: boolean;
-  user!: Register;
+  user=new  Register();
   registrationForm:any;
   constructor(private _authService:AuthService,private formbulider: FormBuilder,) { }
 
   ngOnInit(): void {
+    this.createUser();/*,this.passwordMatchingValidator);*/
+
+
+  }
+   createUser() {
     this.registrationForm = this.formbulider.group({
       name: ['', [Validators.required]],
-      email: ['', [Validators.required,Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
       Mobile: ['', [Validators.required]],
@@ -31,13 +36,12 @@ export class RegisterComponent implements OnInit {
       // State: ['', [Validators.required]],
       // City: ['', [Validators.required]],
       // Pincode: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{6}')])]
-    }, {validators: this.passwordMatchingValidatior});/*,this.passwordMatchingValidator);*/
-
-
+    }, { validators: this.passwordMatchingValidatior });
   }
+
   onSubmit(  )
   {
-    this.userSubmitted = true;
+    // this.userSubmitted = true;
     console.log(this.registrationForm);
     // let register=new Register();
     const register=this.userData();
@@ -68,12 +72,15 @@ export class RegisterComponent implements OnInit {
 
 
 userData(): Register {
-  return this.user = {
-      userName: this.name.value,
-      email: this.email.value,
-      password: this.password.value,
-      Mobile: this.Mobile.value
-  };
+
+
+     this.user. id=null;
+     this.user.userName= this.name.value;
+     this.user.email= this.email.value;
+     this.user.password= this.password.value;
+     this.user.Mobile=this.Mobile.value
+  return this.user;
+
 }
 
 
@@ -82,7 +89,10 @@ userData(): Register {
   }
 
   get name() {
+    const c=this.registrationForm.get('name') as FormControl;
+    console.log(c.value);
     return this.registrationForm.get('name') as FormControl;
+
 }
 
 get email() {
@@ -95,7 +105,7 @@ get confirmPassword() {
     return this.registrationForm.get('confirmPassword') as FormControl;
 }
 get Mobile() {
-    return this.registrationForm.get('mobile') as FormControl;
+    return this.registrationForm.get('Mobile') as FormControl;
 }
 
 }
