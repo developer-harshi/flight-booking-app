@@ -1,7 +1,7 @@
 export class Register {
 
   id?: any;
-  userName?: string;
+  name?: string;
   email?: string;
   password?: string;
   Mobile?:string;

@@ -75,7 +75,7 @@ userData(): Register {
 
 
      this.user. id=null;
-     this.user.userName= this.name.value;
+     this.user.name= this.name.value;
      this.user.email= this.email.value;
      this.user.password= this.password.value;
      this.user.Mobile=this.Mobile.value
