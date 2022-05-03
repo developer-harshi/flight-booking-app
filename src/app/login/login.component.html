@@ -8,8 +8,8 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group col-12">
             <label for="userName" class="form-label">UserName</label>
-            <input type="text" class="form-control" formControlName="userName">
-            <span *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
+            <input type="text" class="form-control" formControlName="email">
+            <span *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
               Please Provide Name
             </span>
         </div>

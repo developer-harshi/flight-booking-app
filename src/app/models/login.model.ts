@@ -4,9 +4,9 @@ export class Login {
 
 
 }
-export interface UserForLogin {
-  userName: string;
-  password: string;
-  token: string;
-  role:string;
+export class UserForLogin {
+  email?: string;
+  password?: string;
+  token?: string;
+  role?:string;
 }
