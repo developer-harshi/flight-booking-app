@@ -11,11 +11,11 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { MessagesComponent } from './messages/messages.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule } from '@angular/material/core';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -36,15 +36,15 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
-    MatInputModule,
+    // MatDatepickerModule,
+    // MatNativeDateModule,
+    // MatFormFieldModule,
+    // MatInputModule,
 
 
   ],
