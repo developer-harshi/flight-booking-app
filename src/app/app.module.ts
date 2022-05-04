@@ -25,7 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SerachflightComponent } from './serachflight/serachflight.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { LoadFlightsComponent } from './load-flights/load-flights.component'
+import { LoadFlightsComponent } from './load-flights/load-flights.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { LoadFlightsComponent } from './load-flights/load-flights.component'
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     // MatDatepickerModule,
     // MatNativeDateModule,
     // MatFormFieldModule,

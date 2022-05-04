@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, Valida
 import { AirlineService } from '../services/airline.service';
 import { AuthService } from '../services/auth.service';
 import {Login, UserForLogin } from '../models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm:any
   loginData=new UserForLogin();
-  constructor(private _authService:AuthService,private formbulider: FormBuilder) { }
+  constructor(private _authService:AuthService,private formbulider: FormBuilder,private router:Router) { }
 
 
 
@@ -68,6 +69,10 @@ get email() {
 }
 get password() {
   return this.loginForm.get('password') as FormControl;
+}
+redirect()
+{
+  this.router.navigateByUrl("/register");
 }
 
 }
