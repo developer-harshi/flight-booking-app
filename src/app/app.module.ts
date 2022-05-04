@@ -24,7 +24,8 @@ import { MessageService } from './message.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SerachflightComponent } from './serachflight/serachflight.component';
-import { MAT_DATE_LOCALE } from '@angular/material/core'
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { LoadFlightsComponent } from './load-flights/load-flights.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
     MessagesComponent,
     LoginComponent,
     HomeComponent,
-    SerachflightComponent
+    SerachflightComponent,
+    LoadFlightsComponent
   ],
   imports: [
     BrowserModule,
