@@ -16,12 +16,12 @@
 <!-- debugger; -->
     <tr *ngFor="let airline of airlines">
 
-      <td style="display: none;">{{airline.Id}}</td>
+      <td style="display: none;">{{airline.id}}</td>
       <td>{{airline.name}}</td>
       <td>{{airline.contactNumber}}</td>
       <td>{{airline.contactAddress}}</td>
       <td >{{airline.status}}</td>
-      <td ><button class="btn btn-primary" type="submit" routerLink="active" routerLink="/airline/+airline.Id}">Edit</button></td>
+      <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{airline.id}}">Edit</button></td>
       <td ><button class="btn btn-primary" type="submit">InActive</button></td>
     </tr>
 
