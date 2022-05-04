@@ -37,5 +37,20 @@ export class AirlineService {
       catchError(this.handleError())
     );
   }
+  getAirline(id:any):Observable<any> {
+    // console.log((baseUrl+'/getallairline/'+id));
+
+    return this.http.get((baseUrl+'/getairline/'+id),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  airlineRegister(data:any):Observable<Register>
+  {
+
+    return this.http.post((baseUrl+'/airline/register'),data,requestOptions) .pipe(
+      catchError(this.handleError('register', data))
+    );
+  }
+
 
 }
