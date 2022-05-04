@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Airline } from '../models/airline.model';
 import { AirlineService } from '../services/airline.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-airlines',
@@ -10,7 +11,7 @@ import { AirlineService } from '../services/airline.service';
 export class ManageAirlinesComponent implements OnInit {
 
   airlines:any;
-  constructor(private _airlineService:AirlineService) { }
+  constructor(private _airlineService:AirlineService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -25,5 +26,12 @@ export class ManageAirlinesComponent implements OnInit {
   );
 
   }
+  // edit(id:any)
+  // {
+  //   console.log("hello");
+  //   console.log(id);
+  //   this.router.navigate(['/airline',id]);
+
+  // }
 
 }
