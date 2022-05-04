@@ -43,14 +43,15 @@ export class LoginComponent implements OnInit {
                 const user = response;
                 if (user) {
                   alert("Log in Success");
-                    localStorage.setItem('token', user.token??"");
+                    localStorage.setItem('token',((user.token??"")));
                     localStorage.setItem('userName', user.email??"");
                     localStorage.setItem('role', user.role??"");
                     console.log(user.token);
                     // this.alertify.success('Login Successful');
-                    // this.router.navigate(['/']);
+                    this.router.navigateByUrl("/home");
                 }
             }
+
         );
   }
   get f(){

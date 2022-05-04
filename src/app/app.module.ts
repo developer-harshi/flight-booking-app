@@ -26,7 +26,8 @@ import { HomeComponent } from './home/home.component';
 import { SerachflightComponent } from './serachflight/serachflight.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { LoadFlightsComponent } from './load-flights/load-flights.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     LoginComponent,
     HomeComponent,
     SerachflightComponent,
-    LoadFlightsComponent
+    LoadFlightsComponent,
+    ManageAirlinesComponent
   ],
   imports: [
     BrowserModule,

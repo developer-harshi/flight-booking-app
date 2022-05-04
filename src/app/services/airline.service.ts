@@ -8,18 +8,34 @@ import { Register } from '../models/register.model';
 import { environment } from '../../environments/environment';
 
 const baseUrl =environment.appRoot;
-
-
-
+const headers = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${localStorage.getItem('token')}`
+});
+const requestOptions = { headers: headers };
 @Injectable({
   providedIn: 'root'
 })
 export class AirlineService {
+
+
+
 
   private handleError: HandleError;
   constructor(private http: HttpClient,httpErrorHandler: HttpErrorHandler) {
 
     this.handleError = httpErrorHandler.createHandleError('AirlineService');
    }
+
+
+
+
+
+   getAirlines():Observable<any> {
+
+    return this.http.get((baseUrl+'/getallairlines'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
 
 }
