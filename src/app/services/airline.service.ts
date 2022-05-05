@@ -117,5 +117,17 @@ export class AirlineService {
       catchError(this.handleError())
     );
   }
+  createFlightBooking(id:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'/getflightbooking/'+id),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  getempty():Observable<any>
+  {
+    return this.http.get((baseUrl+'/getempty'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
 
 }

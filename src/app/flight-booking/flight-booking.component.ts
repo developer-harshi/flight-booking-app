@@ -11,11 +11,14 @@ export class FlightBookingComponent implements OnInit {
   airlines:any;
   flights:any;
   flightSort:any;
-  bookingPersonsModel: Array<any> = [];
+  bookingPersonsModel1: Array<any> = [];
   newItem: any = {};
   flightBooking:any;
 
+
   constructor(private _airlineService:AirlineService,private route:ActivatedRoute,private routes:Router) { }
+
+
 
   ngOnInit(): void {
     this._airlineService.getAirlineLu().subscribe(
@@ -26,6 +29,7 @@ export class FlightBookingComponent implements OnInit {
           console.log('httperror:');
           console.log(error);
       }
+
   );
 
   this._airlineService.getFlightLu().subscribe(
@@ -37,33 +41,75 @@ export class FlightBookingComponent implements OnInit {
         console.log(error);
     }
 );
+this.createFlightBooking();
   }
 
 
 
   populateCity(value: any) {
-    console.log(value);
-    // this.flightSort = this.flights.sort((i: { airlineId: any; }) => i.airlineId == value);
+    console.log(value.value);
+     this.flightSort = this.flights.sort((i: { airlineId: any; }) => i.airlineId === value.value);
   }
   addItems() {
-    this.bookingPersonsModel.push(this.newItem);
-    console.log(this.bookingPersonsModel);
-    this.newItem = {};
+    console.log(this.newItem);
+    this.flightBooking.bookingPersonsModel.push(this.newItem);
+    console.log(this.bookingPersonsModel1);
+    // this.newItem = {};
   }
 
   removeItem(index: number) {
-    this.bookingPersonsModel.splice(index, 1); // remove 1 item at ith place
+    this.flightBooking.bookingPersonsModel.splice(index, 1); // remove 1 item at ith place
   }
   createFlightBooking()
   {
+    console.log(this.route.snapshot.params["id"]);
+    let id=this.route.snapshot.params["id"];
+    this._airlineService.createFlightBooking(id).subscribe(
+      data => {
+          this.flightBooking = data;
+          console.log(this.flightBooking);
+      }, error => {
+          console.log('httperror:');
+          console.log(error);
+      }
+  );
+  this.flightBooking.RegisteredMailId=localStorage.getItem('userName');
+  this._airlineService.getempty().subscribe(
+    data => {
+        this.newItem = data;
+        console.log(this.newItem);
+    }, error => {
+        console.log('httperror:');
+        console.log(error);
+    }
+
+);
+
+
+  // this.newItem=this.flightBooking.bookingPersonsModel[0];
+
 
   }
   cancel()
   {
+    this.routes.navigateByUrl("/search-flight");
+
+
 
   }
   submit()
   {
+    console.log(this.flightBooking);
+    console.log(this.flightBooking);
+    this._airlineService.saveBooking(this.flightBooking).subscribe((res) => {
+      console.log('Issue added!');
+      this.routes.navigateByUrl("/manageairlines");
+    }
+    , error => {
+      console.log('httperror:');
+      console.log(error);
+  }
+    );
 
   }
 }

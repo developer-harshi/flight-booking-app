@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'manageflights', component: ManageShedulesComponent } ,
   { path: 'userhome', component: UserHomeComponent } ,
   { path: 'flight/:id', component: FlightComponent } ,
-  { path: 'flight-Booking', component: FlightBookingComponent } ,
+  { path: 'flight-Booking/:id', component: FlightBookingComponent } ,
   { path: 'search-flight', component: SerachflightComponent } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
