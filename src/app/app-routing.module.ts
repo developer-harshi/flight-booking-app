@@ -4,6 +4,7 @@ import { AirlineComponent } from './airline/airline.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
+import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },  /*admin services*/
   { path: 'manageairlines', component: ManageAirlinesComponent } , /*admin services*/
   { path: 'airline/:id', component: AirlineComponent } ,
+  { path: 'manageflights', component: ManageShedulesComponent } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

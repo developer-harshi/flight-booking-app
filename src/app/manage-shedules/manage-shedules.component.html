@@ -1,0 +1,36 @@
+<app-home></app-home>
+
+<div class="manage-airline">
+  <button class="add-button btn btn-primary" type="submit" routerLink="/airline/{{00000000-0000-0000-0000-000000000000}}">Add Airline</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="display: none;">Id</th>
+      <th scope="col">Flight Id</th>
+      <th scope="col">Airline Name</th>
+      <th scope="col">Sheduled</th>
+      <th scope="col">From Location</th>
+      <th scope="col">To Location</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody >
+<!-- debugger; -->
+    <tr *ngFor="let flight of flights">
+
+      <td style="display: none;">{{flight.id}}</td>
+      <td>{{flight.flightId}}</td>
+      <td>{{flight.airlineName}}</td>
+      <td>{{flight.Sheduled}}</td>
+      <td >{{flight.fromLocation}}</td>
+      <td >{{flight.toLocation}}</td>
+      <td >{{flight.status}}</td>
+      <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{flight.id}}">Edit</button></td>
+      <!-- <td ><button class="btn btn-primary" type="submit">InActive</button></td> -->
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+

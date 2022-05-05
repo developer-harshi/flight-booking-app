@@ -50,7 +50,11 @@ export class LoginComponent implements OnInit {
                     // this.alertify.success('Login Successful');
                     this.router.navigateByUrl("/home");
                 }
-            }
+            } , error => {
+              console.log('httperror:');
+              console.log(error);
+          }
+
 
         );
   }

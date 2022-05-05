@@ -51,6 +51,13 @@ export class AirlineService {
       catchError(this.handleError('register', data))
     );
   }
+  getFlights():Observable<any>
+  {
+
+    return this.http.post((baseUrl+'/getallflights'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
 
 
 }

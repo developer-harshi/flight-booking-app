@@ -28,7 +28,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { LoadFlightsComponent } from './load-flights/load-flights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
-import { AirlineComponent } from './airline/airline.component'
+import { AirlineComponent } from './airline/airline.component';
+import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { AirlineComponent } from './airline/airline.component'
     SerachflightComponent,
     LoadFlightsComponent,
     ManageAirlinesComponent,
-    AirlineComponent
+    AirlineComponent,
+    ManageShedulesComponent
   ],
   imports: [
     BrowserModule,
