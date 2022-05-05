@@ -21,7 +21,7 @@
 
   <div class="form-group ">
     <label for="toLocation">To Location</label>
-    <input type="toLocation" class="form-control"  placeholder="toLocation" name ="contactAddress" [(ngModel)]="flight.toLocation">
+    <input type="toLocation" class="form-control"  placeholder="toLocation" name ="toLocation" [(ngModel)]="flight.toLocation">
   </div>
   <div class="form-group ">
     <label for="veg">Veg</label>
@@ -40,7 +40,7 @@
   </div>
   <div class="form-group ">
     <select name="sheduled" [(ngModel)]="flight.sheduled">
-      <option name ="sheduled"[ngValue]="flight.sheduled">Select something</option>
+      <option name ="sheduled"[ngValue]="null">Select something</option>
       <option *ngFor="let brand of shedules" [value]="brand">
         {{ brand }}
       </option>

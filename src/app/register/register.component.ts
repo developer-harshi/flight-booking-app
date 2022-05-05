@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, Valida
 import { AirlineService } from '../services/airline.service';
 import { Register } from '../models/register.model';
 import { AuthService } from '../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { Guid } from 'guid-typescript';
 
 @Component({
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   userSubmitted!: boolean;
   user=new  Register();
   registrationForm:any;
-  constructor(private _authService:AuthService,private formbulider: FormBuilder,) { }
+  constructor(private _authService:AuthService,private formbulider: FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
     this.createUser();/*,this.passwordMatchingValidator);*/
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
       console.log('Issue added!');
       // this.ngZone.run(() => this.router.navigateByUrl('/issues-list'));
     });
-
+    this.router.navigateByUrl('/login');
   }
   // import { AbstractControl, ValidatorFn } from '@angular/forms';
   // export default class Validation {
