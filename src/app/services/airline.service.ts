@@ -58,6 +58,26 @@ export class AirlineService {
       catchError(this.handleError())
     );
   }
+  getFlight(id:any):Observable<any>
+  {
 
+    return this.http.get((baseUrl+'/getflight/'+id),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+
+  getAirlineLu():Observable<any>
+  {
+
+    return this.http.get((baseUrl+'/getairlinelu'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+ sheduleFlight(data:any):Observable<Register>
+  {
+    return this.http.post((baseUrl+'/airline/inventory/add'),data,requestOptions) .pipe(
+      catchError(this.handleError('register', data))
+    );
+  }
 
 }

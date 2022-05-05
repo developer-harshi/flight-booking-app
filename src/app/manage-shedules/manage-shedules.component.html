@@ -1,7 +1,7 @@
 <app-home></app-home>
 
 <div class="manage-airline">
-  <button class="add-button btn btn-primary" type="submit" routerLink="/airline/{{00000000-0000-0000-0000-000000000000}}">Add Airline</button>
+  <button class="add-button btn btn-primary" type="submit" routerLink="/flight/00000000-0000-0000-0000-000000000000">Add Flight</button>
 <table class="table">
   <thead>
     <tr>
@@ -25,7 +25,7 @@
       <td >{{flight.fromLocation}}</td>
       <td >{{flight.toLocation}}</td>
       <td >{{flight.status}}</td>
-      <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{flight.id}}">Edit</button></td>
+      <td ><button class="btn btn-primary" type="submit" routerLink="/flight/{{flight.id}}">Edit</button></td>
       <!-- <td ><button class="btn btn-primary" type="submit">InActive</button></td> -->
     </tr>
 

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
+// import { EventEmitter } from '@angular/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,10 +13,10 @@ import { RegisterComponent } from './register/register.component';
 import { MessagesComponent } from './messages/messages.component';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatNativeDateModule } from '@angular/material/core';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -57,10 +58,11 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // MatDatepickerModule,
-    // MatNativeDateModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+
 
 
   ],
