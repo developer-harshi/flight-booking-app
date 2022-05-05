@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   }
   logout()
   {
+    console.log("logout")
     localStorage.clear();
     this.router.navigateByUrl('/login');
   }

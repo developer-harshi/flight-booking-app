@@ -73,7 +73,7 @@ this.createFlightBooking();
           console.log(error);
       }
   );
-  this.flightBooking.RegisteredMailId=localStorage.getItem('userName');
+  this.flightBooking.registeredMailId=localStorage.getItem('userName');
   this._airlineService.getempty().subscribe(
     data => {
         this.newItem = data;
@@ -99,11 +99,12 @@ this.createFlightBooking();
   }
   submit()
   {
-    console.log(this.flightBooking);
+    // console.log(this.flightBooking);
+    this.flightBooking.registeredMailId=localStorage.getItem('userName');
     console.log(this.flightBooking);
     this._airlineService.saveBooking(this.flightBooking).subscribe((res) => {
       console.log('Issue added!');
-      this.routes.navigateByUrl("/manageairlines");
+       this.routes.navigateByUrl("/manageairlines");
     }
     , error => {
       console.log('httperror:');
