@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
+import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
+import { Flight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'manageairlines', component: ManageAirlinesComponent } , /*admin services*/
   { path: 'airline/:id', component: AirlineComponent } ,
   { path: 'manageflights', component: ManageShedulesComponent } ,
+  { path: 'userhome', component: UserHomeComponent } ,
+  { path: 'flight', component: Flight } ,
+  { path: 'flight-Booking', component: FlightBookingComponent } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

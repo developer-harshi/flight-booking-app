@@ -29,7 +29,10 @@ import { LoadFlightsComponent } from './load-flights/load-flights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
 import { AirlineComponent } from './airline/airline.component';
-import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component'
+import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
+import { FlightComponent } from './flight/flight.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { FlightBookingComponent } from './flight-booking/flight-booking.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,10 @@ import { ManageShedulesComponent } from './manage-shedules/manage-shedules.compo
     LoadFlightsComponent,
     ManageAirlinesComponent,
     AirlineComponent,
-    ManageShedulesComponent
+    ManageShedulesComponent,
+    FlightComponent,
+    UserHomeComponent,
+    FlightBookingComponent
   ],
   imports: [
     BrowserModule,
