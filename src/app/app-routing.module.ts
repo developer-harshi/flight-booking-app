@@ -9,6 +9,7 @@ import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.compo
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
 import { Flight, SearchFlight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
+import { SerachflightComponent } from './serachflight/serachflight.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'userhome', component: UserHomeComponent } ,
   { path: 'flight/:id', component: FlightComponent } ,
   { path: 'flight-Booking', component: FlightBookingComponent } ,
-  { path: 'search-flight', component: SearchFlight } ,
+  { path: 'search-flight', component: SerachflightComponent } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

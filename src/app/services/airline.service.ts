@@ -79,5 +79,11 @@ export class AirlineService {
       catchError(this.handleError('register', data))
     );
   }
+  searchFlight(data:any):Observable<Register>
+  {
+    return this.http.post((baseUrl+'/search'),data,requestOptions) .pipe(
+      );
+
+  }
 
 }

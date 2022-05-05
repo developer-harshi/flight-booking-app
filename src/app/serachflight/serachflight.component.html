@@ -1,28 +1,10 @@
-
-
-
-
-<!-- <input type="date" class="dd" name="date"> -->
-
-
-
-
-<!-- <input type="date" class="dd" name="date"> -->
-
-
-
-
-<div class="container">
+<app-user-home></app-user-home>
+<h1 style="align-content: center;">꧁༺Serach Below ༻꧂</h1>
+<div class="container" [formGroup]="serachForm" (ngSubmit)="serch()" >
   <div class="row">
     <div class="col">
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Startdate</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field> -->
-      <input type="date" class="form-control" formControlName="fromLocation">
+
+      <input type="date" class="form-control" formControlName="searchDate">
     </div>
     <div class="col">
        <input type="text" class="form-control" placeholder="Enter From Location" formControlName="fromLocation">
@@ -31,17 +13,71 @@
        <input type="text" class="form-control" placeholder="Enter  ToLocation" formControlName="toLocation">
     </div>
     <div class="col">
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Roundtripdate</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field> -->
-      <input type="date" class="form-control"  formControlName="fromLocation">
+
+      <input type="date" class="form-control"  formControlName="roundTripDate">
     </div>
     <div class="col">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-primary" (click)="serch()">Search</button>
    </div>
   </div>
 </div>
+
+
+
+<div class="manage-airline">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="display: none;">Id</th>
+      <th scope="col">Airline Name</th>
+      <th scope="col">FlightId</th>
+      <th scope="col">Price</th>
+      <th scope="col">Shedule</th>
+    </tr>
+  </thead>
+  <tbody >
+<!-- debugger; -->
+    <tr *ngFor="let flight of flights.onDateResults">
+
+      <td style="display: none;">{{flight.id}}</td>
+      <td>{{flight.flightId}}</td>
+      <td>{{flight.airlineName}}}</td>
+      <td>{{flight.price}}}</td>
+      <td >{{flight.sheduled}}}</td>
+      <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{flight.id}}">Book Flight</button></td>
+      <!-- <td ><button class="btn btn-primary" type="submit">InActive</button></td> -->
+    </tr>
+
+  </tbody>
+</table>
+</div>
+<h1 style="align-content: center;">꧁༒☬𝓡𝓸𝓾𝓷𝓭 𝓣𝓻𝓲𝓹☬༒꧂ </h1>
+<div class="manage-airline">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="display: none;">Id</th>
+        <th scope="col">Airline Name</th>
+        <th scope="col">FlightId</th>
+        <th scope="col">Price</th>
+        <th scope="col">Shedule</th>
+      </tr>
+    </thead>
+    <tbody >
+  <!-- debugger; -->
+      <tr *ngFor="let flight of flights.returnDateResults">
+
+        <td style="display: none;">{{flight.id}}</td>
+        <td>{{flight.flightId}}</td>
+        <td>{{flight.airlineName}}}</td>
+        <td>{{flight.price}}}</td>
+        <td >{{flight.sheduled}}}</td>
+        <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{flight.id}}">Book Flight</button></td>
+        <!-- <td ><button class="btn btn-primary" type="submit">InActive</button></td> -->
+      </tr>
+
+    </tbody>
+  </table>
+  </div>

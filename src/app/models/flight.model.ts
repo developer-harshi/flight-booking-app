@@ -1,3 +1,4 @@
+
 export class Flight {
   airlineName?: string;
   flightNumber?: string;
@@ -10,4 +11,8 @@ export class Flight {
 }
 export class SearchFlight{
 
+  SearchDate?:Date;
+  FromLocation?:string;
+  ToLocation?:string;
+  RoundTripDate?:string;
 }

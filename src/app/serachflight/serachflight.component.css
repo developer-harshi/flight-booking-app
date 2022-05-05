@@ -1,0 +1,24 @@
+
+.container
+{
+  /* border: 1px solid black; */
+  margin-top: 50px;
+  /* margin-bottom: 100px; */
+  /* margin-right: 150px;
+  margin-left: 80px; */
+
+}
+.add-button
+{
+
+   /* margin-right: 150px; */
+  margin-left: 1100px;
+
+}
+.manage-airline{
+  margin-top: 50px;
+
+}
+h1{
+  padding-left: 30%;
+}
