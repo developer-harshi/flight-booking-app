@@ -7,7 +7,7 @@
   </div>
   <div class="form-group ">
     <select name="airlineId" [(ngModel)]="flight.airlineId">
-      <option name ="airlineId"[ngValue]="flight.airlineId">Select something</option>
+      <option name ="airlineId"[ngValue]="null">Select something</option>
       <option *ngFor="let option of airlines"
               [ngValue]="option.airlineId" [innerHtml]="option.airlineName"></option>
     </select>
@@ -16,23 +16,22 @@
 
   <div class="form-group">
     <label for="fromlocation">From Location</label>
-    <input type="fromlocation" class="form-control"   placeholder="fromlocation" name ="fromlocation" [(ngModel)]="flight.fromlocation">
+    <input type="fromlocation" class="form-control"   placeholder="fromlocation" name ="fromLocation" [(ngModel)]="flight.fromLocation">
   </div>
 
   <div class="form-group ">
     <label for="toLocation">To Location</label>
-    <input type="toLocation" class="form-control"  placeholder="toLocation" name ="contactAddress" [(ngModel)]="flight.toLocation">
+    <input type="toLocation" class="form-control"  placeholder="tolocation" name ="contactAddress" [(ngModel)]="flight.tolocation">
   </div>
   <div class="form-group ">
-    <label for="veg">veg</label>
-    <input type="veg" class="form-control"  placeholder="veg" name ="veg" [(ngModel)]="flight.veg">
+    <label for="veg">Veg</label>
+    <input type="radio" class="form-control"  placeholder="veg" name ="veg"  [(ngModel)]="flight.veg"  [value]="true" >
+
+    <label for="nonVeg">Non Veg</label>
+    <input type="radio" class="form-control"  placeholder="nonVeg" name ="nonVeg" [(ngModel)]="flight.nonVeg" [value]="true" >
   </div>
   <div class="form-group ">
-    <label for="nonVeg">Veg</label>
-    <input type="nonVeg" class="form-control"  placeholder="nonVeg" name ="nonVeg" [(ngModel)]="flight.nonVeg">
-  </div>
-  <div class="form-group ">
-    <label for="remarks">Non Veg</label>
+    <label for="remarks">remarks</label>
     <input type="remarks" class="form-control"  placeholder="remarks" name ="remarks" [(ngModel)]="flight.remarks">
   </div>
   <div class="form-group ">
