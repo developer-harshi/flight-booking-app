@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
+import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'airline/:id', component: AirlineComponent } ,
   { path: 'manageflights', component: ManageShedulesComponent } ,
   { path: 'userhome', component: UserHomeComponent } ,
-  { path: 'flight', component: Flight } ,
+  { path: 'flight/:id', component: FlightComponent } ,
   { path: 'flight-Booking', component: FlightBookingComponent } ,
   { path: 'search-flight', component: SearchFlight } ,
   // { path: 'product/:id', component: ProductDetailComponent }

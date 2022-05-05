@@ -1,1 +1,54 @@
-<p>flight works!</p>
+<app-home></app-home>
+<form class="airline">
+  <div class=" form-group">
+    <label for="flightId">Name</label>
+    <input type="flightId" class="form-control"  placeholder="flightId" name ="flightId" [(ngModel)]="flight.flightId">
+
+  </div>
+  <div class="form-group ">
+    <select name="airlineId" [(ngModel)]="flight.airlineId">
+      <option name ="airlineId"[ngValue]="flight.airlineId">Select something</option>
+      <option *ngFor="let option of airlines"
+              [ngValue]="option.airlineId" [innerHtml]="option.airlineName"></option>
+    </select>
+
+  </div>
+
+  <div class="form-group">
+    <label for="fromlocation">From Location</label>
+    <input type="fromlocation" class="form-control"   placeholder="fromlocation" name ="fromlocation" [(ngModel)]="flight.fromlocation">
+  </div>
+
+  <div class="form-group ">
+    <label for="toLocation">To Location</label>
+    <input type="toLocation" class="form-control"  placeholder="toLocation" name ="contactAddress" [(ngModel)]="flight.toLocation">
+  </div>
+  <div class="form-group ">
+    <label for="veg">veg</label>
+    <input type="veg" class="form-control"  placeholder="veg" name ="veg" [(ngModel)]="flight.veg">
+  </div>
+  <div class="form-group ">
+    <label for="nonVeg">Veg</label>
+    <input type="nonVeg" class="form-control"  placeholder="nonVeg" name ="nonVeg" [(ngModel)]="flight.nonVeg">
+  </div>
+  <div class="form-group ">
+    <label for="remarks">Non Veg</label>
+    <input type="remarks" class="form-control"  placeholder="remarks" name ="remarks" [(ngModel)]="flight.remarks">
+  </div>
+  <div class="form-group ">
+    <label for="price">Price</label>
+    <input type="price" class="form-control"  placeholder="price" name ="price" [(ngModel)]="flight.price">
+  </div>
+  <div class="form-group ">
+    <select name="schedule" [(ngModel)]="flight.schedule">
+      <option name ="schedule"[ngValue]="flight.airlineId">Select something</option>
+      <option *ngFor="let brand of shedules" [value]="brand">
+        {{ brand }}
+      </option>
+    </select>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="cancel()"> Cancel</button>
+</form>
