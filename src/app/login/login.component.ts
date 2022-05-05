@@ -48,7 +48,14 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem('role', user.role??"");
                     console.log(user.token);
                     // this.alertify.success('Login Successful');
+                    if(user.role==="admin")
+                    {
                     this.router.navigateByUrl("/home");
+                    }
+                    else{
+                      this.router.navigateByUrl("/userhome");
+
+                    }
                 }
             } , error => {
               console.log('httperror:');

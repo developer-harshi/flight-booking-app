@@ -54,7 +54,7 @@ export class AirlineService {
   getFlights():Observable<any>
   {
 
-    return this.http.post((baseUrl+'/getallflights'),requestOptions) .pipe(
+    return this.http.get((baseUrl+'/getallflights'),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }

@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
-import { Flight } from './models/flight.model';
+import { Flight, SearchFlight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'userhome', component: UserHomeComponent } ,
   { path: 'flight', component: Flight } ,
   { path: 'flight-Booking', component: FlightBookingComponent } ,
+  { path: 'search-flight', component: SearchFlight } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }
