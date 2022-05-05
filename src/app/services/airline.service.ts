@@ -85,5 +85,37 @@ export class AirlineService {
       );
 
   }
+  getFlightLu():Observable<any>
+  {
+
+    return this.http.get((baseUrl+'/flightlu'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  saveBooking(data:any):Observable<Register>
+  {
+    return this.http.post((baseUrl+'/booking'),data,requestOptions) .pipe(
+      catchError(this.handleError('register', data))
+    );
+  }
+  searchPNR(pnr:any):Observable<any>
+  {
+
+    return this.http.get((baseUrl+'/ticket/'+pnr),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  cancelPNR(pnr:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'//history/'+pnr),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  getHistory(emailId:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'/booking/history/'+emailId),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
 
 }
