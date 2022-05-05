@@ -32,8 +32,15 @@ export class AirlineComponent implements OnInit {
   {
     console.log(this.airline);
     this._airlineService.airlineRegister(this.airline).subscribe((res) => {
-      console.log('Issue added!')});
+      console.log('Issue added!');
       this.routes.navigateByUrl("/manageairlines");
+    }
+    , error => {
+      console.log('httperror:');
+      console.log(error);
+  }
+    );
+
 
 
   }
