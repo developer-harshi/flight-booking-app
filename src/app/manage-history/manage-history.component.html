@@ -1,0 +1,38 @@
+<app-user-home></app-user-home>
+
+<div class="manage-airline">
+  <!-- <button class="add-button btn btn-primary" type="submit" routerLink="/airline/00000000-0000-0000-0000-000000000000">Add Airline</button> -->
+<table class="table">
+  <thead>
+    <tr>
+      <!-- <th scope="col" style="display: none;">Id</th> -->
+      <th scope="col">Journey Date</th>
+      <th scope="col">PNR</th>
+
+      <th scope="col">Total Price</th>
+      <th scope="col">From Location</th>
+      <th scope="col">To Location</th>
+      <th scope="col">Ticket Status</th>
+
+    </tr>
+  </thead>
+  <tbody >
+<!-- debugger; -->
+    <tr *ngFor="let booking of bookingHistory">
+
+      <!-- <td style="display: none;">{{airline.id}}</td> -->
+      <td>{{booking.fromDate}}</td>
+      <td>{{booking.pnrNumber}}</td>
+
+      <td >{{booking.totalPrice}}</td>
+      <td >{{booking.fromLocation}}</td>
+      <td >{{booking.toLocation}}</td>
+      <td>{{booking.ticketStatus}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+

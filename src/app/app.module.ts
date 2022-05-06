@@ -33,7 +33,9 @@ import { AirlineComponent } from './airline/airline.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
 import { FlightComponent } from './flight/flight.component';
 import { UserHomeComponent } from './user-home/user-home.component';
-import { FlightBookingComponent } from './flight-booking/flight-booking.component'
+import { FlightBookingComponent } from './flight-booking/flight-booking.component';
+import { ManageBookingsComponent } from './manage-bookings/manage-bookings.component';
+import { ManageHistoryComponent } from './manage-history/manage-history.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,9 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     ManageShedulesComponent,
     FlightComponent,
     UserHomeComponent,
-    FlightBookingComponent
+    FlightBookingComponent,
+    ManageBookingsComponent,
+    ManageHistoryComponent
   ],
   imports: [
     BrowserModule,

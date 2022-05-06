@@ -6,6 +6,7 @@ import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
+import { ManageHistoryComponent } from './manage-history/manage-history.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
 import { Flight, SearchFlight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'flight/:id', component: FlightComponent } ,
   { path: 'flight-Booking/:id', component: FlightBookingComponent } ,
   { path: 'search-flight', component: SerachflightComponent } ,
+  { path: 'manage-history', component: ManageHistoryComponent } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }
