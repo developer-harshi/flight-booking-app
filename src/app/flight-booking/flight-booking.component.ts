@@ -104,7 +104,7 @@ this.createFlightBooking();
     console.log(this.flightBooking);
     this._airlineService.saveBooking(this.flightBooking).subscribe((res) => {
       console.log('Issue added!');
-       this.routes.navigateByUrl("/manageairlines");
+       this.routes.navigateByUrl("/manage-history");
     }
     , error => {
       console.log('httperror:');

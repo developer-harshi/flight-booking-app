@@ -35,7 +35,9 @@ import { FlightComponent } from './flight/flight.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { ManageBookingsComponent } from './manage-bookings/manage-bookings.component';
-import { ManageHistoryComponent } from './manage-history/manage-history.component'
+import { ManageHistoryComponent } from './manage-history/manage-history.component';
+import { AuthguardServiceService } from './services/authguard-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +75,8 @@ import { ManageHistoryComponent } from './manage-history/manage-history.componen
   providers: [
     HttpErrorHandler,
     MessageService,
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    AuthguardServiceService
 
     // { provide: RequestCache, useClass: RequestCacheWithMap },
     // httpInterceptorProviders

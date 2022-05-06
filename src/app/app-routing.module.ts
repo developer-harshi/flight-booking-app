@@ -11,21 +11,22 @@ import { ManageShedulesComponent } from './manage-shedules/manage-shedules.compo
 import { Flight, SearchFlight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
 import { SerachflightComponent } from './serachflight/serachflight.component';
+import { AuthenticationGuardGuard } from './services/authentication-guard.guard';
 import { UserHomeComponent } from './user-home/user-home.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent, pathMatch: 'full' },  /*admin services*/
-  { path: 'manageairlines', component: ManageAirlinesComponent } , /*admin services*/
-  { path: 'airline/:id', component: AirlineComponent } ,
-  { path: 'manageflights', component: ManageShedulesComponent } ,
-  { path: 'userhome', component: UserHomeComponent } ,
-  { path: 'flight/:id', component: FlightComponent } ,
-  { path: 'flight-Booking/:id', component: FlightBookingComponent } ,
-  { path: 'search-flight', component: SerachflightComponent } ,
-  { path: 'manage-history', component: ManageHistoryComponent } ,
+  { path: 'home', component: HomeComponent, pathMatch: 'full',canActivate:[AuthenticationGuardGuard] },  /*admin services*/
+  { path: 'manageairlines', component: ManageAirlinesComponent ,canActivate:[AuthenticationGuardGuard]} , /*admin services*/
+  { path: 'airline/:id', component: AirlineComponent ,canActivate:[AuthenticationGuardGuard] } ,
+  { path: 'manageflights', component: ManageShedulesComponent ,canActivate:[AuthenticationGuardGuard]} ,
+  { path: 'userhome', component: UserHomeComponent ,canActivate:[AuthenticationGuardGuard]} ,
+  { path: 'flight/:id', component: FlightComponent ,canActivate:[AuthenticationGuardGuard]} ,
+  { path: 'flight-Booking/:id', component: FlightBookingComponent ,canActivate:[AuthenticationGuardGuard] } ,
+  { path: 'search-flight', component: SerachflightComponent ,canActivate:[AuthenticationGuardGuard]} ,
+  { path: 'manage-history', component: ManageHistoryComponent ,canActivate:[AuthenticationGuardGuard]} ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }
