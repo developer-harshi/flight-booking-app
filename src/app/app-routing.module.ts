@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },  /*admin services*/
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },  /*admin services*/
   { path: 'manageairlines', component: ManageAirlinesComponent } , /*admin services*/
   { path: 'airline/:id', component: AirlineComponent } ,
   { path: 'manageflights', component: ManageShedulesComponent } ,

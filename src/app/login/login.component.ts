@@ -48,6 +48,17 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem('role', user.role??"");
                     console.log(user.token);
                     // this.alertify.success('Login Successful');
+                    if(user.role==="admin")
+                    {
+                      console.log(localStorage.getItem("role"));
+                    this.router.navigateByUrl("/home");
+
+                    }
+                    else{
+                      console.log(localStorage.getItem("role"));
+                      this.router.navigateByUrl("/userhome");
+
+                    }
 
                 }
             } , error => {
@@ -58,14 +69,7 @@ export class LoginComponent implements OnInit {
 
         );
 
-        if(localStorage.getItem("role")==="admin")
-        {
-        this.router.navigateByUrl("/home");
-        }
-        else{
-          this.router.navigateByUrl("/userhome");
 
-        }
   }
   get f(){
     return this.loginForm.controls;
