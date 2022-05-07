@@ -22,7 +22,7 @@
       <td>{{airline.contactAddress}}</td>
       <td >{{airline.status}}</td>
       <td ><button class="btn btn-primary" type="submit" routerLink="/airline/{{airline.id}}">Edit</button></td>
-      <td ><button class="btn btn-primary" type="submit">InActive</button></td>
+      <td ><button class="btn btn-primary" type="submit" (click)="activeInActive(airline.id,airline.status)">Block/UnBlock</button></td>
     </tr>
 
   </tbody>

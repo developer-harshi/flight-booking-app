@@ -129,5 +129,35 @@ export class AirlineService {
       catchError(this.handleError())
     );
   }
+  getallDisCounts():Observable<any>
+  {
+    return this.http.get((baseUrl+'/getdiscounts'),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  getDisCount(id:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'/getdiscount/'+id),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  saveDiscounts(data:any):Observable<any>
+  {
+    return this.http.post((baseUrl+'/savediscount'),data,requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  adminActibeInActive(tableName:any,id:any,status:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'/activeincctiveadmin/'+tableName+'/'+id+'/'+status),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  userActibeInActive(tableName:any,id:any,status:any):Observable<any>
+  {
+    return this.http.get((baseUrl+'/activeincctive/'+tableName+'/'+id+'/'+status),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
 
 }

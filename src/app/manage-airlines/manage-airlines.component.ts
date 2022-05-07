@@ -26,6 +26,20 @@ export class ManageAirlinesComponent implements OnInit {
   );
 
   }
+  activeInActive(id:any,status:any)
+  {
+    this._airlineService.adminActibeInActive("dbo.Airline",id,status).subscribe(
+      data => {
+
+          this.router.navigateByUrl("/manageairlines");
+      }, error => {
+          console.log('httperror:');
+          console.log(error);
+      }
+  );
+
+
+  }
   // edit(id:any)
   // {
   //   console.log("hello");

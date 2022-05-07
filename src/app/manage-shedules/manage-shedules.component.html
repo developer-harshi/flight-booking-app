@@ -26,7 +26,7 @@
       <td >{{flight.toLocation}}</td>
       <td >{{flight.status}}</td>
       <td ><button class="btn btn-primary" type="submit" routerLink="/flight/{{flight.id}}">Edit</button></td>
-      <!-- <td ><button class="btn btn-primary" type="submit">InActive</button></td> -->
+      <td ><button class="btn btn-primary" type="submit" (click)="activeInActive(flight.id,flight.status)">Block/UnBlock</button></td>
     </tr>
 
   </tbody>

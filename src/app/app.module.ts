@@ -37,6 +37,7 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
 import { ManageBookingsComponent } from './manage-bookings/manage-bookings.component';
 import { ManageHistoryComponent } from './manage-history/manage-history.component';
 import { AuthguardServiceService } from './services/authguard-service.service';
+import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AuthguardServiceService } from './services/authguard-service.service';
     UserHomeComponent,
     FlightBookingComponent,
     ManageBookingsComponent,
-    ManageHistoryComponent
+    ManageHistoryComponent,
+    ManageDiscountsComponent
   ],
   imports: [
     BrowserModule,
