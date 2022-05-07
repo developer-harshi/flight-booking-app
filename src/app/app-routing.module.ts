@@ -7,6 +7,7 @@ import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
+import { ManageBookingsComponent } from './manage-bookings/manage-bookings.component';
 import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.component';
 import { ManageHistoryComponent } from './manage-history/manage-history.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'manage-history', component: ManageHistoryComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'managediscounts', component: ManageDiscountsComponent ,canActivate:[AuthenticationGuardGuard]} , /*admin services*/
   { path: 'discount/:id', component: DiscountComponent ,canActivate:[AuthenticationGuardGuard] } ,
+  { path: 'manageb-bookings', component: ManageBookingsComponent ,canActivate:[AuthenticationGuardGuard] } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

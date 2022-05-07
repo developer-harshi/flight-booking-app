@@ -64,7 +64,7 @@
       <select style="float:left;" style="width: 100px" (change)="populateCity($event.target)"  name="discount" [(ngModel)]="flightBooking.discount">
         <option name ="discount"[ngValue]="null">Select something</option>
         <option *ngFor="let option of discounts"
-                [ngValue]="option.value" [innerHtml]="option.Name"></option>
+                [ngValue]="option.value" [innerHtml]="option.name"></option>
               </select>
             </div> -->
 
@@ -98,8 +98,8 @@
           <td><input type="number" style="width: 100px" name="person.age" [(ngModel)]="person.age"></td>
           <td><input type="text" style="width: 100px" name="person.gender" [(ngModel)]="person.gender"></td>
           <td ><input type="number" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.SeatNo"></td>
-          <td ><input type="radio" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.veg"></td>
-          <td ><input type="radio" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.nonVeg"></td>
+          <td ><input type="radio" style="width: 100px" name="person.SeatNo" [value]="true" [(ngModel)]="person.veg"></td>
+          <td ><input type="radio" style="width: 100px" name="person.SeatNo"[value]="true" [(ngModel)]="person.nonVeg"></td>
 
         </tr>
       </tbody >
