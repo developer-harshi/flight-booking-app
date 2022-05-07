@@ -14,6 +14,9 @@ export class FlightBookingComponent implements OnInit {
   bookingPersonsModel1: Array<any> = [];
   newItem: any = {};
   flightBooking:any;
+  discounts:any;
+  airlineId:any;
+  flightid:any;
 
 
   constructor(private _airlineService:AirlineService,private route:ActivatedRoute,private routes:Router) { }
@@ -41,6 +44,17 @@ export class FlightBookingComponent implements OnInit {
         console.log(error);
     }
 );
+this._airlineService.getDisCountLu().subscribe(
+  data => {
+      this.discounts = data;
+      console.log(this.discounts);
+  }, error => {
+      console.log('httperror:');
+      console.log(error);
+  }
+);
+
+
 this.createFlightBooking();
   }
 
@@ -48,7 +62,7 @@ this.createFlightBooking();
 
   populateCity(value: any) {
     console.log(value.value);
-     this.flightSort = this.flights.sort((i: { airlineId: any; }) => i.airlineId === value.value);
+    this.flightBooking.totalPrice=((this.flightBooking.totalPrice)- (this.flightBooking.discount))
   }
   addItems() {
     console.log(this.newItem);
@@ -62,9 +76,14 @@ this.createFlightBooking();
   }
   createFlightBooking()
   {
+    console.log(this.route.snapshot.params);
     console.log(this.route.snapshot.params["id"]);
+    console.log(this.route.snapshot.params["id1"]);
+    // console.log(this.route.snapshot.params["id2"]);
     let id=this.route.snapshot.params["id"];
-    this._airlineService.createFlightBooking(id).subscribe(
+  this.flightid=this.route.snapshot.params["id1"];
+  // this.flightid=this.route.snapshot.params["id2"];
+    this._airlineService.createFlightBooking(id,this.flightid).subscribe(
       data => {
           this.flightBooking = data;
           console.log(this.flightBooking);
@@ -112,5 +131,9 @@ this.createFlightBooking();
   }
     );
 
+  }
+  price()
+  {
+    this.flightBooking.totalPrice=((this.flightBooking. noOfNONBUSeats)* (this.flightBooking.flightPrice))
   }
 }

@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'manageflights', component: ManageShedulesComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'userhome', component: UserHomeComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'flight/:id', component: FlightComponent ,canActivate:[AuthenticationGuardGuard]} ,
-  { path: 'flight-Booking/:id', component: FlightBookingComponent ,canActivate:[AuthenticationGuardGuard] } ,
+  { path: 'flight-Booking/:id/:id1', component: FlightBookingComponent ,canActivate:[AuthenticationGuardGuard] } ,
   { path: 'search-flight', component: SerachflightComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'manage-history', component: ManageHistoryComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'managediscounts', component: ManageDiscountsComponent ,canActivate:[AuthenticationGuardGuard]} , /*admin services*/

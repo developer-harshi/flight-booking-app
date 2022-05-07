@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators,FormControl, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SearchFlight } from '../models/flight.model';
 import { AirlineService } from '../services/airline.service';
 
@@ -12,7 +13,7 @@ export class SerachflightComponent implements OnInit {
   serachForm:any;
   flights:any;
   serachFlight=new SearchFlight();
-  constructor(private _airlineService:AirlineService,private formbulider: FormBuilder) {}
+  constructor(private _airlineService:AirlineService,private formbulider: FormBuilder,private routes:Router) {}
 
   ngOnInit(): void {
     this.serachForm = this.formbulider.group({
@@ -74,5 +75,11 @@ get roundTripDate() {
       // this.ngZone.run(() => this.router.navigateByUrl('/issues-list'));
 
 
+  }
+
+
+  flightBooking(singleFlight:any)
+  {
+    this.routes.navigate(['/flight-Booking', singleFlight.id,  singleFlight.id]);
   }
 }

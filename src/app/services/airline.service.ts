@@ -107,7 +107,7 @@ export class AirlineService {
   }
   cancelPNR(pnr:any):Observable<any>
   {
-    return this.http.get((baseUrl+'//history/'+pnr),requestOptions) .pipe(
+    return this.http.get((baseUrl+'/history/'+pnr),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }
@@ -117,9 +117,9 @@ export class AirlineService {
       catchError(this.handleError())
     );
   }
-  createFlightBooking(id:any):Observable<any>
+  createFlightBooking(id:any,flightid:any):Observable<any>
   {
-    return this.http.get((baseUrl+'/getflightbooking/'+id),requestOptions) .pipe(
+    return this.http.get((baseUrl+'/getflightbooking/'+id+"/"+flightid),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }
@@ -156,6 +156,12 @@ export class AirlineService {
   userActibeInActive(tableName:any,id:any,status:any):Observable<any>
   {
     return this.http.get((baseUrl+'/activeinActiveuser/'+tableName+'/'+id+'/'+status),requestOptions) .pipe(
+      catchError(this.handleError())
+    );
+  }
+  getDisCountLu():Observable<any>
+  {
+    return this.http.get((baseUrl+'/getdiscount'),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }

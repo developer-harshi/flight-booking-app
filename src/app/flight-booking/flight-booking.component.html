@@ -2,7 +2,7 @@
 <h1 style="align-content: center;">Flight Booking</h1>
 
 <form class="airline">
-  <div class="left">
+  <!-- <div class="left">
    <h3>Select Airlines:</h3>
    <select  style="width: 100px" (change)="populateCity($event.target)" name="airlineId" [(ngModel)]="flightBooking.airlineId">
     <option name ="airlineId"[ngValue]="null">Select something</option>
@@ -18,7 +18,7 @@
       <option *ngFor="let option of flightSort"
               [ngValue]="option.flightId" [innerHtml]="option.flightNumber"></option>
             </select>
-          </div>
+          </div> -->
 
 
   <!-- <div class="form-group">
@@ -35,21 +35,46 @@
   </div>
     <div class="left">
 
-    <label for="price">NoOfSeats</label>
-    <input style="width: 100px" type="number" class="form-control"  placeholder="noOfNONBUSeats" name ="noOfNONBUSeats" [defaultValue]="2000" [(ngModel)]="flightBooking.noOfNONBUSeats">
+    <label for="airlineName">Airline Name</label>
+    <input style="width: 150px" type="text" class="form-control"  placeholder="airlineName" name ="airlineName" [(ngModel)]="flightBooking.airlineName">
     </div>
     <div class="left">
 
+      <label for="flightNumber">Flight Number</label>
+      <input style="width: 150px" type="text" class="form-control"  placeholder="flightNumber" name ="airlineName"  [(ngModel)]="flightBooking.flightNumber">
+      </div>
+
+    <div class="left">
+
+      <label for="price">NoOfSeats</label>
+      <input style="width: 100px" type="number" class="form-control"  placeholder="noOfNONBUSeats" name ="noOfNONBUSeats" (click)="price()" [(ngModel)]="flightBooking.noOfNONBUSeats">
+      </div>
+
+
+    <div class="left">
+
     <label for="price">Price</label>
-    <input style="width: 100px" type="number" class="form-control"  placeholder="price" name ="totalPrice" [defaultValue]="2000" [(ngModel)]="flightBooking.totalPrice">
+    <input style="width: 100px" type="number" class="form-control"  placeholder="price" name ="totalPrice" [(ngModel)]="flightBooking.totalPrice">
 
 
   </div>
+  <div class="left">
+    <h3>  Select Discount:</h3>
+
+      <select style="float:left;" style="width: 100px" (change)="populateCity($event.target)"  name="discount" [(ngModel)]="flightBooking.discount">
+        <option name ="discount"[ngValue]="null">Select something</option>
+        <option *ngFor="let option of discounts"
+                [ngValue]="option.value" [innerHtml]="option.Name"></option>
+              </select>
+            </div> -->
+
+
+
 </form>
 
 
 <br>
-<button type="submit" class="btn btn-primary" (click)="addItems()">Add</button>
+<button type="submit" class="add-button btn btn-primary" (click)="addItems()">Add</button>
 
 
     <table class="table">
@@ -60,6 +85,8 @@
           <th scope="col">Age</th>
           <th scope="col">Gender</th>
           <th scope="col">SeatNo</th>
+          <th scope="col">Veg</th>
+          <th scope="col">Non Veg</th>
         </tr>
       </thead>
       <tbody >
@@ -71,6 +98,8 @@
           <td><input type="number" style="width: 100px" name="person.age" [(ngModel)]="person.age"></td>
           <td><input type="text" style="width: 100px" name="person.gender" [(ngModel)]="person.gender"></td>
           <td ><input type="number" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.SeatNo"></td>
+          <td ><input type="radio" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.veg"></td>
+          <td ><input type="radio" style="width: 100px" name="person.SeatNo" [(ngModel)]="person.nonVeg"></td>
 
         </tr>
       </tbody >
