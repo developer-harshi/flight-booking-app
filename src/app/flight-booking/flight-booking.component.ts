@@ -17,7 +17,7 @@ export class FlightBookingComponent implements OnInit {
   discounts:any;
   airlineId:any;
   flightid:any;
-
+  realPrice:any;
 
   constructor(private _airlineService:AirlineService,private route:ActivatedRoute,private routes:Router) { }
 
@@ -62,7 +62,7 @@ this.createFlightBooking();
 
   populateCity(value: any) {
     console.log(value.value);
-    this.flightBooking.totalPrice=((this.flightBooking.totalPrice)- (this.flightBooking.discount))
+    this.flightBooking.totalPrice=(( this.realPrice)- (this.flightBooking.discount))
   }
   addItems() {
     console.log(this.newItem);
@@ -134,6 +134,7 @@ this.createFlightBooking();
   }
   price()
   {
-    this.flightBooking.totalPrice=((this.flightBooking. noOfNONBUSeats)* (this.flightBooking.flightPrice))
+    this.flightBooking.totalPrice=((this.flightBooking. noOfNONBUSeats)* (this.flightBooking.flightPrice));
+    this.realPrice=this.flightBooking.totalPrice;
   }
 }

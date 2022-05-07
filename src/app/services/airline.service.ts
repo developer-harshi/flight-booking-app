@@ -107,7 +107,7 @@ export class AirlineService {
   }
   cancelPNR(pnr:any):Observable<any>
   {
-    return this.http.get((baseUrl+'/history/'+pnr),requestOptions) .pipe(
+    return this.http.delete((baseUrl+'/booking/cancel/'+pnr),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }

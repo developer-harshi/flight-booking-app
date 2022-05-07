@@ -22,6 +22,19 @@ export class ManageBookingsComponent implements OnInit {
       }
   );
   }
+  cancelBooking(pnrNumber:any)
+  {
+    this._airlineService.cancelPNR(pnrNumber).subscribe(
+      data => {
 
+        console.log(data);
+        this.ngOnInit();
+      }, error => {
+          console.log('httperror:');
+          console.log(error);
+      }
+  );
+
+  }
 
 }

@@ -28,7 +28,7 @@
       <td >{{booking.fromLocation}}</td>
       <td >{{booking.toLocation}}</td>
       <td>{{booking.ticketStatus}}</td>
-      <td ><button class="btn btn-primary" type="submit">Cancel Booking</button></td>
+      <td ><button class="btn btn-primary" type="submit" (click)="cancelBooking(booking.pnrNumber)">Cancel Booking</button></td>
       <td ><button class="btn btn-primary" type="submit">Details</button></td>
 
     </tr>
