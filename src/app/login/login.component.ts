@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
                 console.log(response);
                 const user = response;
                 if (user) {
-                  alert("Log in Success");
+                  // alert("Log in Success");
                     localStorage.setItem('token',((user.token??"")));
                     localStorage.setItem('userName', user.email??"");
                     localStorage.setItem('role', user.role??"");
