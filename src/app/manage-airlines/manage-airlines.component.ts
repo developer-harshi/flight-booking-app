@@ -30,12 +30,14 @@ export class ManageAirlinesComponent implements OnInit {
   {
     this._airlineService.adminActibeInActive("dbo.Airline",id,status).subscribe(
       data => {
+        console.log(data);
+        this.ngOnInit();
 
-          this.router.navigateByUrl("/manageairlines");
       }, error => {
           console.log('httperror:');
           console.log(error);
       }
+
   );
 
 

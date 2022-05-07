@@ -6,8 +6,9 @@
 
   </div>
   <div class="form-group ">
+    <label for="AirlineId"><h3>Select Airline</h3></label>
     <select name="airlineId" [(ngModel)]="flight.airlineId">
-      <option name ="airlineId"[ngValue]="null">Select something</option>
+      <option name ="airlineId"[ngValue]="null">Select Airline </option>
       <option *ngFor="let option of airlines"
               [ngValue]="option.airlineId" [innerHtml]="option.airlineName"></option>
     </select>
@@ -39,8 +40,10 @@
     <input type="number" class="form-control"  placeholder="price" name ="price" [(ngModel)]="flight.price">
   </div>
   <div class="form-group ">
+    <label for="AirlineId"><h3>Select Sheule </h3></label>
     <select name="sheduled" [(ngModel)]="flight.sheduled">
-      <option name ="sheduled"[ngValue]="null">Select something</option>
+
+      <option name ="sheduled"[ngValue]="null"><h3>Select Sheule</h3></option>
       <option *ngFor="let brand of shedules" [value]="brand">
         {{ brand }}
       </option>

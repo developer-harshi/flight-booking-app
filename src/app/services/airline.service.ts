@@ -155,7 +155,7 @@ export class AirlineService {
   }
   userActibeInActive(tableName:any,id:any,status:any):Observable<any>
   {
-    return this.http.get((baseUrl+'/activeincctive/'+tableName+'/'+id+'/'+status),requestOptions) .pipe(
+    return this.http.get((baseUrl+'/activeinActiveuser/'+tableName+'/'+id+'/'+status),requestOptions) .pipe(
       catchError(this.handleError())
     );
   }

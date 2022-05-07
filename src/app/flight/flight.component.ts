@@ -47,7 +47,7 @@ airlines:any;
   {
      console.log(this.flight);
     this._airlineService.sheduleFlight(this.flight).subscribe((res) => {
-      console.log('Issue added!');
+      console.log(this.flight);
       this.routes.navigateByUrl("/manageflights");
     }
     , error => {
@@ -59,6 +59,7 @@ airlines:any;
   }
   cancel()
   {
+    this.routes.navigateByUrl("/manageflights");
 
   }
 

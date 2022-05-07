@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
+import { DiscountComponent } from './discount/discount.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManageAirlinesComponent } from './manage-airlines/manage-airlines.component';
+import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.component';
 import { ManageHistoryComponent } from './manage-history/manage-history.component';
 import { ManageShedulesComponent } from './manage-shedules/manage-shedules.component';
 import { Flight, SearchFlight } from './models/flight.model';
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'flight-Booking/:id', component: FlightBookingComponent ,canActivate:[AuthenticationGuardGuard] } ,
   { path: 'search-flight', component: SerachflightComponent ,canActivate:[AuthenticationGuardGuard]} ,
   { path: 'manage-history', component: ManageHistoryComponent ,canActivate:[AuthenticationGuardGuard]} ,
+  { path: 'managediscounts', component: ManageDiscountsComponent ,canActivate:[AuthenticationGuardGuard]} , /*admin services*/
+  { path: 'discount/:id', component: DiscountComponent ,canActivate:[AuthenticationGuardGuard] } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

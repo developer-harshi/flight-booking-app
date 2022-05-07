@@ -1,1 +1,30 @@
-<p>manage-discounts works!</p>
+<app-home></app-home>
+
+<div class="manage-airline">
+  <button class="add-button btn btn-primary" type="submit" routerLink="/discount/00000000-0000-0000-0000-000000000000">Add Discount</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="display: none;">Id</th>
+      <th scope="col">Coupon Name</th>
+      <th scope="col">Value</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody >
+<!-- debugger; -->
+    <tr *ngFor="let discount of discounts">
+
+      <td style="display: none;">{{discount.id}}</td>
+      <td>{{discount.couponName}}</td>
+      <td>{{discount.value}}</td>
+      <td >{{discount.status}}</td>
+      <td ><button class="btn btn-primary" type="submit" routerLink="/discount/{{discount.id}}">Edit</button></td>
+      <td ><button class="btn btn-primary" type="submit" (click)="activeInActive(discount.id,discount.status)">Block/UnBlock</button></td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+

@@ -28,9 +28,8 @@ flights:any;
   {
     this._airlineService.adminActibeInActive("dbo.Flights",id,status).subscribe(
       data => {
-
-
-          this.router.navigateByUrl("/manageairlines");
+        console.log(data);
+        this.ngOnInit();
       }, error => {
           console.log('httperror:');
           console.log(error);

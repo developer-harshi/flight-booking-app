@@ -1,4 +1,4 @@
-.manage-airline
+.airline
 {
   /* border: 1px solid black; */
   margin-top: 100px;
@@ -6,8 +6,4 @@
   margin-right: 150px;
   margin-left: 80px;
 
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
 }
