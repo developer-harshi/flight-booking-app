@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class ManageBookingsComponent implements OnInit {
   bookingHistory:any;
+  PNR:any;
+
   constructor(private _airlineService:AirlineService,private router:Router) { }
 
   ngOnInit(): void {
@@ -34,6 +36,26 @@ export class ManageBookingsComponent implements OnInit {
           console.log(error);
       }
   );
+
+  }
+  search()
+  {
+    if(this.PNR!=null && this.PNR!=undefined && this.PNR!="")
+    {
+      this._airlineService.searchPNR(this.PNR).subscribe(
+        data => {
+            this.bookingHistory = data;
+            console.log(data);
+        }, error => {
+            console.log('httperror:');
+            console.log(error);
+        }
+    );
+    }
+    else
+    {
+      this.ngOnInit()
+    }
 
   }
 

@@ -39,6 +39,7 @@ import { ManageHistoryComponent } from './manage-history/manage-history.componen
 import { AuthguardServiceService } from './services/authguard-service.service';
 import { ManageDiscountsComponent } from './manage-discounts/manage-discounts.component';
 import { DiscountComponent } from './discount/discount.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { DiscountComponent } from './discount/discount.component';
     ManageBookingsComponent,
     ManageHistoryComponent,
     ManageDiscountsComponent,
-    DiscountComponent
+    DiscountComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,

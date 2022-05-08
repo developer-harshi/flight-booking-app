@@ -1,35 +1,43 @@
 <app-user-home></app-user-home>
-
+<table style="border: none;">
+  <tr style="border: none;">
+  <td><input class="searchBox form-control" style="width: 300px" type="text" placeholder="Search with PNR"
+    aria-label="Search" name="PNR" [(ngModel)]="PNR" ></td>
+  <td><button class="left btn btn-primary" type="submit" (click)="search()">Search</button></td>
+  <!-- <td><label for="last_name">Last Name:</label></td> <td>
+  <input name="last_name" id="Last_Name" type="text" /></td>  -->
+  </tr>
+</table>
 <div class="manage-airline">
   <!-- <button class="add-button btn btn-primary" type="submit" routerLink="/airline/00000000-0000-0000-0000-000000000000">Add Airline</button> -->
-<table class="table">
+<table class="table1 table">
   <thead>
-    <tr>
+    <tr class="table1">
       <!-- <th scope="col" style="display: none;">Id</th> -->
-      <th scope="col">Journey Date</th>
-      <th scope="col">PNR</th>
+      <th class="table1" scope="col">Journey Date</th>
+      <th class="table1" scope="col">PNR</th>
 
-      <th scope="col">Total Price</th>
-      <th scope="col">From Location</th>
-      <th scope="col">To Location</th>
-      <th scope="col">Ticket Status</th>
+      <th class="table1" scope="col">Total Price</th>
+      <th class="table1"  scope="col">From Location</th>
+      <th class="table1" scope="col">To Location</th>
+      <th class="table1" scope="col">Ticket Status</th>
 
     </tr>
   </thead>
   <tbody >
 <!-- debugger; -->
-    <tr *ngFor="let booking of bookingHistory">
+    <tr class="table1" *ngFor="let booking of bookingHistory">
 
       <!-- <td style="display: none;">{{airline.id}}</td> -->
-      <td>{{booking.fromDate}}</td>
-      <td>{{booking.pnrNumber}}</td>
+      <td class="table1" >{{booking.fromDate}}</td>
+      <td class="table1">{{booking.pnrNumber}}</td>
 
-      <td >{{booking.totalPrice}}</td>
-      <td >{{booking.fromLocation}}</td>
-      <td >{{booking.toLocation}}</td>
-      <td>{{booking.ticketStatus}}</td>
-      <td ><button class="btn btn-primary" type="submit" (click)="cancelBooking(booking.pnrNumber)">Cancel Booking</button></td>
-      <td ><button class="btn btn-primary" type="submit">Details</button></td>
+      <td class="table1" >{{booking.totalPrice}}</td>
+      <td class="table1">{{booking.fromLocation}}</td>
+      <td class="table1">{{booking.toLocation}}</td>
+      <td class="table1">{{booking.ticketStatus}}</td>
+      <td class="table1"><button class="btn btn-primary" type="submit" (click)="cancelBooking(booking.pnrNumber)">Cancel Booking</button></td>
+      <td class="table1"><button class="btn btn-primary" type="submit" routerLink="/details/{{booking.pnrNumber}}" >Details</button></td>
 
     </tr>
 

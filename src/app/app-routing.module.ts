@@ -15,6 +15,7 @@ import { Flight, SearchFlight } from './models/flight.model';
 import { RegisterComponent } from './register/register.component';
 import { SerachflightComponent } from './serachflight/serachflight.component';
 import { AuthenticationGuardGuard } from './services/authentication-guard.guard';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'managediscounts', component: ManageDiscountsComponent ,canActivate:[AuthenticationGuardGuard]} , /*admin services*/
   { path: 'discount/:id', component: DiscountComponent ,canActivate:[AuthenticationGuardGuard] } ,
   { path: 'manageb-bookings', component: ManageBookingsComponent ,canActivate:[AuthenticationGuardGuard] } ,
+  { path: 'details/:id', component: TicketDetailsComponent ,canActivate:[AuthenticationGuardGuard] } ,
   // { path: 'product/:id', component: ProductDetailComponent }
 
   // { path: '**', component: PageNotFoundComponent }

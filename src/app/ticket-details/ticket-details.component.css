@@ -16,20 +16,12 @@
   margin-left: 80px;
 
 }
-.active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #f48fb1;
-  box-shadow: 0 1px 0 0 #f48fb1;
-  size: 2in;
-}
+
 .left{
   /* float:left; */
-  margin-right: 0.5in;
-  margin-top: 15px;
-
-
-}
- .searchBox
-{
   margin-left: 6in;
   margin-top: 15px;
+
+
 }
+
